@@ -1,3 +1,8 @@
+//
+// This code calculates beam size from the result of warp extraction simulation
+// plot sigma_x : z, sigma_y : z
+// You should run this code in cern ROOT
+//
 #include <stdio.h>
 #include "TMath.h"
 void beamsize() {
