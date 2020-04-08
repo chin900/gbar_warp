@@ -1,44 +1,11 @@
 #include <stdio.h>
 #include "TMath.h"
 void beamsize() {
-  /*
-  TString address = "/home/bclee/Analysis/Data_warp/root/";
-  TString fname = "Extraction_hep2011_001.root";
-  TFile *f = new TFile(address+fname);
-  cout<<"file"<<fname<<endl;
-
-  Double_t x, y, z, t, vx, vy, vz;
-  TTree *t = (TTree *)f->Get("wExt");
-  TBranch *bx = t->GetBranch("x");
-  TBranch *by = t->GetBranch("y");
-  TBranch *bz = t->GetBranch("z");
-  TBranch *bt = t->GetBranch("t");
-  TBranch *bvx = t->GetBranch("vx");
-  TBranch *bvy = t->GetBranch("vy");
-  TBranch *bvz = t->GetBranch("vz");
-  bx->SetAddress(&x);
-  by->SetAddress(&y);
-  bz->SetAddress(&z);
-  bt->SetAddress(&t);
-  bvx->SetAddress(&vx);
-  bvy->SetAddress(&vy);
-  bvz->SetAddress(&vz);
-  Int_t nEnt = t->GetEntries();
-
-  for (int i = 0; i<nEnt; i++) {
-    cout<<"Progress(%) : "<<100*i/nEnt<<"\%\r";
-    cout.flush();
-
-    TH1D *hx = new TH1D("hx_tmp","hx_tmp", 1000, -.001, .001);
-
-
-  } // i
-  */
-  int nDat = 228;
+  TString address = "/home/bclee/Analysis/Data_warp/shchoi/zposition_particle_data/";
+	
   double ex[nDat], ey[nDat];
   double z[nDat];
-
-  TString address = "/home/bclee/Analysis/Data_warp/shchoi/zposition_particle_data/";
+  int nDat = 228;
   for (int id = 0; id < nDat; id++) {
     cout<<"Progress(%) : "<<100*id/nDat<<"\%\r";
     cout.flush();
@@ -85,8 +52,6 @@ void beamsize() {
   c->cd(2);
   gy->Draw();
 
-  cout<<"sigma x at "<<z[67]<<"m : "<<ex[67]<<endl;
   cout<<"sigma x at "<<z[227]<<"m : "<<ex[227]<<endl;
   cout<<"sigma y at "<<z[227]<<"m : "<<ey[227]<<endl;
-
 }
