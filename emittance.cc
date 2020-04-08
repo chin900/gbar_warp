@@ -1,3 +1,8 @@
+//
+// This code calculates emittance from the result of warp extraction simulation
+// plot emit_x : z, emit_y : z
+// You should run this code in cern ROOT
+//
 #include <stdio.h>
 #include "TMath.h"
 void emittance() {
