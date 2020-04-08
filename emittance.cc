@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include "TMath.h"
 void emittance() {
-  int nDat = 228;
+  TString address = "/home/bclee/Analysis/Data_warp/hep2011/zposition_particle_data/";
+	
   double s[2][nDat];
   double z[nDat];
-
-  TString address = "/home/bclee/Analysis/Data_warp/hep2011/zposition_particle_data/";
+  int nDat = 228;
   for (int id = 0; id < nDat; id++) {
     cout<<"Progress(%) : "<<100*id/nDat<<"\%\r";
     cout.flush();
@@ -62,8 +62,6 @@ void emittance() {
   c->cd(2);
   gy->Draw();
 
-  cout<<"emmitance x at "<<z[67]<<"m : "<<s[0][67]<<endl;
   cout<<"emmitance x at "<<z[227]<<"m : "<<s[0][227]<<endl;
   cout<<"emmitance y at "<<z[227]<<"m : "<<s[1][227]<<endl;
-
 }
